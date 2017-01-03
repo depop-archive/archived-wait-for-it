@@ -3,7 +3,7 @@ This relies on NETCAT, without this you cannot utilise this utility.
 
 ```apt-get install netcat```
 
-or
+or (alpine container)
 
 ```apk add netcat-openbsd```
 
