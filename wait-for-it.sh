@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 echoerr() { echo "$@" 1>&2; }
 
@@ -15,10 +15,12 @@ USAGE
 }
 
 connect() {
-    nc -z $1 $2
+    (echo > /dev/tcp/$1/$2) >/dev/null 2>&1
     res=$?
     if [ $res -eq 1 ]; then
-      echoerr "$(date) - waiting for $1 $2";
+        echoerr "$(date) - waiting for $1 $2";
+    else
+        echoerr "Connection to $1 $2 succeeded [tcp]"
     fi
     return $res
 }
@@ -36,7 +38,7 @@ timeout() {
         sleep 1.0;
     done
     if [ $res -eq 1 ]; then
-        echoerr "Timeout while waiting for \"$@\""
+        echoerr "Timeout while waiting for $@"
     fi
     return $res
 }

@@ -1,16 +1,13 @@
 # IMPORTANT
-This relies on NETCAT, without this you cannot utilise this utility.
+This relies on a bash shell, without this you cannot utilise this utility.
+If you are using alpine container builds then add bash
 
-```apt-get install netcat```
-
-or (alpine container)
-
-```apk add netcat-openbsd```
+```apk add bash```
 
 
-# WHY netcat?
+# WHY bash?
 
-We should netcat because the binary is considerably smaller than bash, and so it will work inside alpine
+Well we could netcat, but then we're stuck in sh shell hell where we have to use dynamic variable names for arrays.
 
 ## Usage
 
