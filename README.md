@@ -1,12 +1,16 @@
 # IMPORTANT
 This relies on NETCAT, without this you cannot utilise this utility.
+
 ```apt-get install netcat```
+
 or
+
 ```apk add netcat-openbsd```
+
 
 # WHY netcat?
 
-We should netcat because the binary is considerably smaller than bash, and so it will work inside alpine with bash
+We should netcat because the binary is considerably smaller than bash, and so it will work inside alpine
 
 ## Usage
 
